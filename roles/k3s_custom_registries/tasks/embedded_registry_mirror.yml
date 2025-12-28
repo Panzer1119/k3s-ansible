@@ -1,0 +1,21 @@
+---
+- name: Ensure systemd drop-in directory exists for k3s
+  ansible.builtin.file:
+    path: "{{ systemd_dir }}/k3s.service.d"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Configure embedded registry mirror env for k3s server
+  ansible.builtin.template:
+    src: embedded_registry_mirror.conf.j2
+    dest: "{{ systemd_dir }}/k3s.service.d/embedded-registry-mirror.conf"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Reload systemd to pick up embedded registry mirror drop-ins
+  ansible.builtin.systemd:
+    daemon_reload: true
+...

@@ -172,6 +172,19 @@ custom_registries_yaml: |
         username: yourusername
         password: yourpassword
 
+# Embedded Registry Mirror (Spegel)
+# https://docs.k3s.io/installation/registry-mirror
+k3s_embedded_registry_mirror_enabled: false
+
+# K3S_P2P_PORT (default: 5001)
+# k3s_p2p_port: 5001
+
+# K3S_P2P_ENABLE_LATEST (default: false)
+# k3s_p2p_enable_latest: false
+
+# --disable-default-registry-endpoint (default: false)
+# k3s_disable_default_registry_endpoint: false
+
 # On some distros like Diet Pi, there is no dbus installed. dbus required by the default reboot command.
 # Uncomment if you need a custom reboot command
 # custom_reboot_command: /usr/sbin/shutdown -r now

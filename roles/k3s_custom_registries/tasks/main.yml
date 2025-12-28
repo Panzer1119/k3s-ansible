@@ -14,3 +14,8 @@
     block: "{{ custom_registries_yaml }}"
     mode: "0600"
     create: true
+
+- name: Configure embedded registry mirror
+  ansible.builtin.include_tasks: embedded_registry_mirror.yml
+  when: k3s_embedded_registry_mirror_enabled
+...

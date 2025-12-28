@@ -1,7 +1,7 @@
 ---
 argument_specs:
   main:
-    short_description: Configure the use of a custom container registry
+    short_description: Configure the use of a custom container registry and optionally K3s's embedded registry mirror (Spegel)
     options:
       custom_registries_yaml:
         description:
@@ -18,3 +18,25 @@ argument_specs:
             caching the docker/quay/ghcr.io images, you can just remove
             those from the mirrors: section.
         required: true
+      k3s_p2p_port:
+        type: int
+        required: false
+        default: 5001
+        description:
+          - Port used for Spegel P2P communication.
+          - Maps to K3S_P2P_PORT.
+      k3s_p2p_enable_latest:
+        type: bool
+        required: false
+        default: false
+        description:
+          - Allow mirroring of the latest tag.
+          - Maps to K3S_P2P_ENABLE_LATEST.
+      k3s_disable_default_registry_endpoint:
+        type: bool
+        required: false
+        default: false
+        description:
+          - Disable the default registry endpoint.
+          - Adds the --disable-default-registry-endpoint flag.
+...
