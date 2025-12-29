@@ -179,6 +179,9 @@ k3s_embedded_registry_mirror_enabled: false
 # K3S_P2P_PORT (default: 5001)
 # k3s_p2p_port: 5001
 
+# K3S_P2P_ENABLE_DEBUG_WEB (default: false)
+# k3s_p2p_enable_debug_web: false
+
 # K3S_P2P_ENABLE_LATEST (default: false)
 # k3s_p2p_enable_latest: false
 

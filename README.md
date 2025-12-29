@@ -142,6 +142,7 @@ See the commands [here](https://technotim.live/posts/k3s-etcd-ansible/#testing-y
 | `k3s_custom_registries` | `custom_registries_yaml` | string | ❌ | Required | YAML block defining custom registries. The following is an example that pulls all images used in this playbook through your private registries. It also allows you to pull your own images from your private registry, without having to use imagePullSecrets in your deployments. If all you need is your own images and you don't care about caching the docker/quay/ghcr.io images, you can just remove those from the mirrors: section. |
 | `k3s_custom_registries` | `k3s_embedded_registry_mirror_enabled` | bool | `false` | Not required | Enable embedded registry mirror. |
 | `k3s_custom_registries` | `k3s_p2p_port` | int | `5001` | Not required | Spegel P2P port. Sets `K3S_P2P_PORT`. |
+| `k3s_custom_registries` | `k3s_p2p_enable_debug_web` | bool | `false` | Not required | Start debug web server for P2P. Sets `K3S_P2P_ENABLE_DEBUG_WEB`. |
 | `k3s_custom_registries` | `k3s_p2p_enable_latest` | bool | `false` | Not required | Enable mirroring of the `latest` tag. Sets `K3S_P2P_ENABLE_LATEST`. |
 | `k3s_custom_registries` | `k3s_disable_default_registry_endpoint` | bool | `false` | Not required | Disable the default registry endpoint. Adds `--disable-default-registry-endpoint` to server and agent args. |
 | `k3s_server`, `k3s_server_post` | `cilium_bgp` | bool | `~` | Not required | Enable cilium BGP control plane for LB services and pod cidrs. Disables the use of MetalLB. |
